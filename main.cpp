@@ -21,7 +21,13 @@ int main(int narg, char** args) {
         MPI_Abort(MPI_COMM_WORLD, 1);
     }
 
-    auto rc = init_memcached("localhost");
+    const char* memcached_server = std::getenv("MEMCACHED_SERVER");
+    if (memcached_server == nullptr) {
+        std::cerr << "MEMCACHED_SERVER env missing" << std::endl;
+        MPI_Abort(MPI_COMM_WORLD, 1);
+    }
+
+    auto rc = init_memcached(memcached_server);
     if (rc != 0) {
         std::cerr << "Failed to initialize memcached" << std::endl;
         return 255;
@@ -55,7 +61,7 @@ int main(int narg, char** args) {
 
     /** STEP 3 **/
     if (rank == 0) {
-        std::cout << "3. Reduce to form (A,B) -> (B C D)(B D E)" << std::endl;
+        std::cout << "3. Reduce to form (A,B) -> (B C D) (B D E)" << std::endl;
     }
 
     mr->collate(NULL);
@@ -63,6 +69,10 @@ int main(int narg, char** args) {
 
     /** FINAL STEP **/
     if (OUTPUT_TO_FILE) {
+        if (rank == 0) {
+            std::cout << "4. Dump results to file" << std::endl;
+        }
+
         char fname[] = "output.txt";
         FILE* fp = fopen(fname, "w");
 

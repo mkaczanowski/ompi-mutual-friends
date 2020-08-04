@@ -15,15 +15,15 @@ add_compile_options(-Wall -Wextra)
 
 add_executable(
     friends
-	main.cpp
-	memcached.cpp
-	mfriends.cpp
+    main.cpp
+    memcached.cpp
+    mfriends.cpp
     ${SOURCES}
 )
 
 target_link_libraries(
     friends
-	${MPI_C_LIBRARIES}
-	${MPI_CXX_LIBRARIES}
-	${LIBMEMCACHED_LIBRARY}
+    ${MPI_C_LIBRARIES}
+    ${MPI_CXX_LIBRARIES}
+    ${LIBMEMCACHED_LIBRARY}
 )
