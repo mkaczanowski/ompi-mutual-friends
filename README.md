@@ -52,9 +52,11 @@ Map-reduce tutorials are abundant on the internet, so I'll skip the deep-dive an
 The example run for A & B friends who have D, Z, F, G friends in common:
 1. Transform data to form A -> D,Z,E (friend list)
 2. Perform a Cartesian product:
+```
 (A, D) -> D, Z, E
 (A, Z) -> D, Z, E
 (A, E) -> D, Z, E
+```
 
 3. Reduce all tuples to a form (A, D) -> (D,Z,E)(Z,E,F,G)
 4. Intersect friends lists (A, D) -> (Z,E)
