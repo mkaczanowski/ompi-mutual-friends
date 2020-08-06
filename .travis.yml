@@ -1,0 +1,16 @@
+ language: cpp
+dist: bionic
+compiler: clang
+
+addons:
+  apt:
+    packages:
+    - clang-10
+    - libstdc++-8-dev
+    - libmemcached-dev
+    - cmake
+
+script: 
+  - mkdir build && cd build
+  - cmake ../
+  - make
