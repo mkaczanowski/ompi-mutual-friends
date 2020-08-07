@@ -71,25 +71,6 @@ The OpenMPI version of map-reduce is not as straightforward as using Hadoop, as 
 
 Here's the results of the test I conducted on 4x odroids U3 (16 nprocs):
 
-| procs  | time  |
-| :------------ | :------------ |
-|  1 |  623.784  |
-|  2 |  562.679 |
-|  3 |  202.538 |
-|  4 |  179.679 |
-|  5 |  197.639 |
-|  6 |  262.464 |
-|  7 |  56.529 |
-|  8 |  34.286 |
-|  9 |  31.052 |
-|  10 |  31.041 |
-|  11 |  28.649 |
-|  12 |  26.256 |
-|  13 |  23.924 |
-|  14 | 23.61  |
-|  15 |  22.775 |
-|  16 |  21.538 |
-
 ![OpenMPI map reduce results](http://mkaczanowski.com/wp-content/uploads/2015/05/openmpi-map-reduce-results1.png "OpenMPI map reduce results")
 
 It took 21.538s to process 421000 tuples on 16 cores (4 machines), where on 1 core it takes 623.784s. Is that satisfactory? To me, yes... somewhat, I expected worse performance.
