@@ -1,3 +1,8 @@
+[![Build Status][travis-badge]][travis]
+
+[travis-badge]: https://travis-ci.org/mkaczanowski/ompi-mutual-friends.svg?branch=master
+[travis]: https://travis-ci.org/mkaczanowski/ompi-mutual-friends/
+
 # Setup
 This experiment aims to boost up data processing speed by spreading the workload on a few low-end ARM boards. So, I'd recommend setting up a few Raspberry PIs within the same network pod, but if you can't do that, the OpenMPI framework also allows local execution (handy for testing).
 
