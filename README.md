@@ -92,7 +92,7 @@ Here's the results of the test I conducted on 4x odroids U3 (16 nprocs):
 
 ![OpenMPI map reduce results](http://mkaczanowski.com/wp-content/uploads/2015/05/openmpi-map-reduce-results1.png "OpenMPI map reduce results")
 
-It took 21.538s to process 421000 tuples on 16 cores (4 machines). Results of last reduce operations were collected to master node and saved to disk. Is that satisfactory? To me, yes... somewhat, I expected worse timing.
+It took 21.538s to process 421000 tuples on 16 cores (4 machines), where on 1 core it takes 623.784s. Is that satisfactory? To me, yes... somewhat, I expected worse performance.
 
 # Demo
 [![](http://mkaczanowski.com/wp-content/uploads/2015/05/5f2c954e910fddownload-1.png)](https://www.youtube.com/watch?v=_u7X21Gj6XE)
