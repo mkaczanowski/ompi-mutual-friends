@@ -1,4 +1,4 @@
- language: cpp
+language: cpp
 dist: bionic
 compiler: clang
 
@@ -9,6 +9,7 @@ addons:
     - libstdc++-8-dev
     - libmemcached-dev
     - cmake
+    - libopenmpi-dev
 
 script: 
   - mkdir build && cd build
